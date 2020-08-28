@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <audio src="./nhacgame2.mp3" autoplay muted></audio>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <link type="text/css" rel="stylesheet" href="view/style/screen.css">
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyApdTR3-8t7GT4TEwu73tMGE161N5puzw8",
+                authDomain: "ducanh-55662.firebaseapp.com",
+                databaseURL: "https://ducanh-55662.firebaseio.com",
+                projectId: "ducanh-55662",
+                storageBucket: "ducanh-55662.appspot.com",
+                messagingSenderId: "622667377467",
+                appId: "1:622667377467:web:a56f9a50c1b32da9f9651e"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+        </script>
+        
+</head>
+<body>
+    <div id="app">
+        
+    </div>
+</body>
+<!-- Play -->
+<template id="gameScreen">
+    <link type="text/css" rel="stylesheet" href="view/style/screen.css">
+    <div class="d-flex p-10 flex-end">
+        <button id="linkToLogin" class="m-10 btn btn-primary">Login</button>
+        <span id="linkToRegister" class="link">Register</span>  
+    </div>
+    
+    <div class="d-fex center m-top-95">
+        <div id="displayName" class="p-50 displayName"></div>
+        <button class="big-btn" id="playGame">Play Game!</button>
+    </div>
+</template>
+<!-- play -->
+<!-- +++++++++++++++++++++++++++++++++ -->
+<template id="loginScreen">
+    <link type="text/css" rel="stylesheet" href="view/style/screen.css">
+    <form id="form-login" class="form-center">
+        <div class="title">Login</div>
+        <div class="form-input-container">
+            <form-input name="email" type="email" label="Email"></form-input>
+            <form-input name="password" type="password" label="Password"></form-input>
+        </div>
+        <div class="center-sm">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <span id="linkToRegister" class="link">Register</span>
+        </div>
+        <div>
+            <span class="link" id="linkToForgotpassword">Forgot Password</span>
+        </div>
+    </form>
+
+</template>
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+<template id="registerScreen">
+    <link type="text/css" rel="stylesheet" href="view/style/screen.css">
+    <form id="formRegister" class="form-center">
+        <div class="title">Register</div>
+        <div class="form-input-container">
+            <form-input name="email" type="text" label="Email"></form-input>
+            <form-input name="displayname" type="text" label="Displayname"></form-input>
+            <form-input name="password" type="password" label="Password"></form-input>
+            <form-input name="confirmpassword" type="password" label="Confirm Password"></form-input>
+        </div>
+        <div class="center-sm">
+            <button type="submit" class="btn btn-primary">Register</button>
+            <span id="linkToLogin" class="link">Back to Login</span>
+        </div>
+    </form>
+
+</template>
+<!-- ====================================== -->
+<template id="forgotPasswordScreen">
+    <link type="text/css" rel="stylesheet" href="view/style/screen.css">
+    <form id="formForgot" class="form-center">
+        <div class="title">ForgotPassWord</div>
+        <form-input name="email" type="text" label="Email"></form-input>
+        <div class="center-sm">
+            <button type="submit" class="btn btn-primary">Send</button>
+            <span id="linkToLogin" class="link">Back to Login</span>
+        </div>
+    </form>
+</template>
+<!-- ++++++++++++++++++++++++++++++++++++ -->
+<template id="form-input">
+    <link type="text/css" rel="stylesheet" href="view/style/screen.css">
+    <div id="container" class="input-container line-break">
+        <div id="errorMessage" class="center"></div>
+        <input id="input" class="input"/>
+        <label id="label" class="label"></label>       
+    </div>
+</template>
+<script src="./index.js" type="module"></script>
+</html>
